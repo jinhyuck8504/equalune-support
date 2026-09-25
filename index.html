@@ -3,8 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Equalune support: how to play, Daily Challenge timing, sharing, privacy, and contact details. 이퀄룬 고객지원과 개인정보 처리방침.">
-  <title>Equalune Support · 고객지원</title>
+  <meta name="theme-color" content="#10192a">
+  <meta name="description" content="Equalune is a free, offline 60-second sun-and-moon puzzle for iPhone. See real gameplay, learn the rules, and find support and privacy information in English and Korean.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Equalune — Find your balance">
+  <meta property="og:description" content="Draw a box. Match the suns and moons. Go big in 60 seconds.">
+  <meta property="og:image" content="https://jinhyuck8504.github.io/equalune-support/media/gameplay-selection-en.png">
+  <title>Equalune — Game &amp; Support · 게임 소개 및 고객지원</title>
   <style>
     :root { color-scheme: dark; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #10192a; color: #f8fbff; }
     * { box-sizing: border-box; }
@@ -14,22 +19,45 @@
     a:focus-visible, summary:focus-visible { outline: 3px solid #ffd278; outline-offset: 4px; border-radius: 4px; }
     .skip { position: absolute; left: -9999px; top: 8px; padding: .6rem; background: #fff; color: #10192a; z-index: 2; }
     .skip:focus { left: 8px; }
-    .wrap { width: min(100% - 2rem, 1040px); margin: auto; }
+    .wrap { width: min(100% - 2rem, 1120px); margin: auto; }
     header { border-bottom: 1px solid #40506b; }
     header .wrap { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
     .brand { display: inline-flex; align-items: center; gap: .7rem; color: #fff; text-decoration: none; font-weight: 800; font-size: 1.2rem; letter-spacing: -.02em; }
     .mark { display: inline-grid; place-items: center; width: 2.4rem; height: 2.4rem; border-radius: .8rem; background: linear-gradient(135deg, #f9c861 50%, #91dfe0 50%); color: #142239; font-size: 1.3rem; }
     nav { display: flex; flex-wrap: wrap; gap: .9rem; font-size: .94rem; }
-    main { padding: clamp(2rem, 6vw, 5rem) 0 4rem; }
-    .hero { max-width: 830px; margin-bottom: 3rem; }
+    main { padding: clamp(2rem, 5vw, 4rem) 0 4rem; }
+    .hero { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(280px, .85fr); align-items: center; gap: clamp(2rem, 6vw, 5rem); margin-bottom: 2.5rem; }
     .eyebrow { color: #ffd278; font-size: .8rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
-    h1 { margin: .5rem 0 .8rem; font-size: clamp(2.5rem, 7vw, 5rem); letter-spacing: -.06em; line-height: 1.05; }
+    h1 { margin: .5rem 0 .8rem; max-width: 11ch; font-size: clamp(3.2rem, 7vw, 5.7rem); letter-spacing: -.07em; line-height: 1; }
+    h1 span { color: #b9cfff; }
     .hero p { color: #dce6f6; font-size: clamp(1.05rem, 2.4vw, 1.28rem); margin: .55rem 0; }
     .actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.6rem; }
+    .facts { display: flex; flex-wrap: wrap; gap: .45rem; margin: 1.4rem 0 0; padding: 0; list-style: none; }
+    .facts li { padding: .35rem .65rem; border: 1px solid #71819f; border-radius: 999px; color: #e3ecfa; font-size: .84rem; }
+    .release-note { max-width: 37rem; margin: 1.4rem 0 0; padding: .85rem 1rem; border-left: 3px solid #ffd278; border-radius: 0 .7rem .7rem 0; background: #28344a; color: #e7eefb; font-size: .94rem; }
     .button { display: inline-block; padding: .75rem 1.1rem; border-radius: .8rem; text-decoration: none; font-weight: 750; background: #ffd278; color: #122038; }
     .button:hover { color: #122038; background: #ffebaf; }
     .button.secondary { color: #e8f9fa; border: 1px solid #83d8d6; background: transparent; }
     .button.secondary:hover { background: #284a61; color: #fff; }
+    .phone-wrap { position: relative; display: flex; justify-content: center; padding: 1rem 0; }
+    .phone-wrap::before { content: ""; position: absolute; inset: 10% 5%; border-radius: 50%; background: #9ee9e544; filter: blur(65px); }
+    .phone { position: relative; width: min(100%, 290px); padding: 8px; border: 2px solid #6b7893; border-radius: 37px; background: #0b1120; box-shadow: 0 28px 65px #050a1880; transform: rotate(5deg); }
+    .phone img { display: block; width: 100%; height: auto; border-radius: 28px; }
+    .phone-caption { position: absolute; bottom: 1.2rem; right: 0; padding: .65rem .85rem; border: 1px solid #9ee9e5; border-radius: .9rem; background: #173338ef; color: #e1fff5; font-size: .88rem; font-weight: 750; }
+    .feature-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+    .feature { padding: 1.4rem; min-height: 12.5rem; border: 1px solid #435473; border-radius: 1.2rem; background: #1a2940; }
+    .feature:nth-child(2) { background: #252a42; }
+    .feature:nth-child(3) { background: #19353d; }
+    .feature .number { color: #ffd278; font-size: .83rem; font-weight: 850; letter-spacing: .13em; }
+    .feature h3 { margin: 1.15rem 0 .3rem; font-size: 1.27rem; }
+    .feature p { margin: .35rem 0 0; color: #d7e4f2; font-size: .94rem; }
+    .feature p[lang="ko"] { color: #c2d6e7; }
+    .demo-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+    .demo { display: grid; grid-template-columns: minmax(0, 1fr) 170px; align-items: center; gap: 1rem; padding: 1.2rem; border: 1px solid #435473; border-radius: 1.2rem; background: #1a2940; }
+    .demo h3 { margin: .1rem 0 .5rem; font-size: 1.22rem; }
+    .demo p { margin: 0; color: #d5e1ef; font-size: .92rem; }
+    .demo video { display: block; width: 100%; height: auto; aspect-ratio: 1284 / 2778; border: 1px solid #7586a6; border-radius: 1rem; background: #10192a; object-fit: contain; }
+    .section-intro { max-width: 46rem; color: #cddbec; }
     .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
     .card { padding: clamp(1.2rem, 3vw, 2rem); border: 1px solid #435473; border-radius: 1.25rem; background: #1a2940; box-shadow: 0 14px 35px #07101e44; }
     .card h2 { margin: 0 0 .7rem; font-size: 1.45rem; line-height: 1.25; }
@@ -46,7 +74,10 @@
     .small { font-size: .9rem; color: #bfccdf; }
     footer { border-top: 1px solid #40506b; padding: 1.5rem 0 2.5rem; color: #bfccdf; font-size: .9rem; }
     footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: .7rem; }
-    @media (max-width: 720px) { .grid { grid-template-columns: 1fr; } header .wrap { align-items: flex-start; flex-direction: column; padding: 1rem 0; } }
+    @media (max-width: 850px) { .hero { grid-template-columns: 1fr; } .phone-wrap { justify-content: flex-start; } .demo-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 720px) { .grid, .feature-grid { grid-template-columns: 1fr; } .feature { min-height: auto; } header .wrap { align-items: flex-start; flex-direction: column; padding: 1rem 0; } .phone-wrap { justify-content: center; } .phone { transform: none; } }
+    @media (max-width: 390px) { .demo { grid-template-columns: 1fr; } .demo video { max-width: 190px; } }
+    @media (prefers-reduced-motion: reduce) { .phone { transform: none; } }
   </style>
 </head>
 <body>
@@ -55,24 +86,55 @@
     <div class="wrap">
       <a class="brand" href="./" aria-label="Equalune support home"><span class="mark" aria-hidden="true">☀︎</span> Equalune</a>
       <nav aria-label="Page navigation / 페이지 이동">
-        <a href="#english">English</a>
-        <a href="#korean">한국어</a>
+        <a href="#play">Game · 게임</a>
+        <a href="#video">Gameplay · 플레이 영상</a>
+        <a href="#support">Support · 고객지원</a>
         <a href="privacy.html">Privacy · 개인정보</a>
       </nav>
     </div>
   </header>
   <main id="main" class="wrap">
-    <div class="hero">
-      <div class="eyebrow">Support · 고객지원</div>
-      <h1>Find your balance.</h1>
-      <p>Help for Equalune, the offline 60-second sun-and-moon puzzle.</p>
-      <p lang="ko">해와 달의 균형을 찾는 오프라인 60초 퍼즐, Equalune의 도움말입니다.</p>
-      <div class="actions">
-        <a class="button" href="mailto:jinhyucks@gmail.com">Email support · 이메일 문의</a>
-        <a class="button secondary" href="privacy.html">Privacy policy · 개인정보 처리방침</a>
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <div class="eyebrow">A sun-and-moon puzzle for iPhone</div>
+        <h1 id="hero-title">Find your <span>balance.</span></h1>
+        <p>Draw a box. Match the suns and moons. Make every second count.</p>
+        <p lang="ko">사각형을 그리고 해와 달의 수를 맞추세요. 60초 안에 더 큰 균형을 찾아보세요.</p>
+        <ul class="facts" aria-label="Game features"><li>60-second rounds · 60초 게임</li><li>Offline · 오프라인</li><li>Free · 무료</li><li>No account · 계정 불필요</li></ul>
+        <p class="release-note">App Store launch in progress. A download link will appear here after release.<br><span lang="ko">App Store 출시 준비 중입니다. 출시 후 이곳에 다운로드 링크를 안내하겠습니다.</span></p>
+        <div class="actions">
+          <a class="button" href="#play">Learn the game · 게임 방법</a>
+          <a class="button secondary" href="#video">Watch gameplay · 영상 보기</a>
+        </div>
       </div>
-    </div>
+      <div class="phone-wrap">
+        <div class="phone"><img src="media/gameplay-selection-en.png" alt="Real Equalune iPhone gameplay showing a highlighted 2 by 2 box with two suns and two moons on the 6 by 6 board." width="1284" height="2778" fetchpriority="high"></div>
+        <div class="phone-caption">☀︎ 2 = ☾ 2<br><span lang="ko">같은 수를 찾아요</span></div>
+      </div>
+    </section>
 
+    <section id="play" aria-labelledby="play-title">
+      <div class="eyebrow">The game · 게임 방법</div>
+      <h2 class="section-title" id="play-title">Easy to start. Hard to master.</h2>
+      <p class="section-intro" lang="ko">규칙은 간단합니다. 큰 사각형과 이어지는 콤보를 찾을수록 점수가 높아집니다.</p>
+      <div class="feature-grid">
+        <div class="feature"><div class="number">01 / SELECT</div><h3>Frame a rectangle</h3><p>Drag from one tile to its opposite corner, or tap both corners. The box must be at least 2 × 2.</p><p lang="ko">한 타일에서 반대편 모서리까지 드래그하거나 두 모서리를 차례로 탭하세요. 가로와 세로가 각각 2칸 이상이어야 합니다.</p></div>
+        <div class="feature"><div class="number">02 / BALANCE</div><h3>Match sun and moon</h3><p>Equal numbers clear the box, then new tiles fall into the 6 × 6 board.</p><p lang="ko">사각형 안의 해와 달의 수가 같으면 타일이 사라지고 새 타일이 내려옵니다.</p></div>
+        <div class="feature"><div class="number">03 / CHAIN</div><h3>Go big. Keep moving.</h3><p>Larger boxes score more. Clear another within five seconds to grow your combo.</p><p lang="ko">큰 사각형일수록 점수가 높습니다. 5초 안에 다시 지우면 콤보가 이어집니다.</p></div>
+      </div>
+    </section>
+
+    <section id="video" aria-labelledby="video-title">
+      <div class="eyebrow">Real iPhone simulator capture · 실제 게임 화면</div>
+      <h2 class="section-title" id="video-title">See a box come to life.</h2>
+      <p class="section-intro">These short, silent clips show the game running on an iPhone simulator. <span lang="ko">iPhone 시뮬레이터에서 실행한 게임을 담은 짧은 무음 영상입니다.</span></p>
+      <div class="demo-grid">
+        <div class="demo" lang="en"><div><h3>English gameplay</h3><p>Watch a balanced rectangle clear and new suns and moons settle into place. Use the video controls to play.</p></div><video controls playsinline preload="none" poster="media/gameplay-selection-en.png" width="1284" height="2778" aria-label="English Equalune gameplay preview"><source src="media/equalune-gameplay-en.mp4" type="video/mp4">Your browser cannot play this preview.</video></div>
+        <div class="demo" lang="ko"><div><h3>한국어 플레이</h3><p>균형을 맞춘 사각형이 지워지고 새로운 해와 달이 내려오는 장면입니다. 영상 버튼을 눌러 재생하세요.</p></div><video controls playsinline preload="none" poster="media/gameplay-selection-ko.png" width="1284" height="2778" aria-label="한국어 Equalune 플레이 영상"><source src="media/equalune-gameplay-ko.mp4" type="video/mp4">이 브라우저에서는 영상을 재생할 수 없습니다.</video></div>
+      </div>
+    </section>
+
+    <h2 class="section-title" id="support">Support · 고객지원</h2>
     <div class="grid">
       <section class="card" id="english" lang="en" aria-labelledby="en-play">
         <h2 id="en-play">How to play</h2>
